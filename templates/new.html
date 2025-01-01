@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block title %}
+    New Schedule
+{% endblock %}
+
+{% block main %}
+    <form action="/new" method="post">
+          <p>How many staffers will be on the schedule?</p>
+          <input class="form-control mx-auto w-auto" autocomplete="off" type="staffersNum" name="staffersNum" id="staffersNum" placeholder="Number of staffers" aria-label="default input example" required>
+          <p>How many staffers will work per day?</p>
+          <input class="form-control mx-auto w-auto" autocomplete="off" type="perShift" name="perShift" id="perShift" placeholder="Staffers per shift" aria-label="default input example" required>
+          <button class="btn" type="submit">Next</button>
+    </form>
+{% endblock %}

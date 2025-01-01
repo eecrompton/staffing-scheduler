@@ -1,0 +1,52 @@
+.homeBtn {
+    background: #B8E0D2;
+    border: #809BCE;
+    color: #27285C;
+}
+
+.welcome {
+    color: #27285C;
+}
+
+#welcome {
+    margin: 30px;
+}
+
+#welcome2 {
+    margin: 15px;
+}
+
+h2 {
+    margin: 30px;
+}
+
+#instructions {
+    padding: 100px;
+}
+
+p {
+    color: #27285C;
+    margin: 15px;
+}
+
+button {
+    color: #27285C;
+}
+
+.btn {
+    background: #809BCE;
+    border: #809BCE;
+    color: #27285C;
+    margin: 50px;
+}
+
+#days-of-week {
+    font-size: 30px;
+    color: #809BCE;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+#thanks {
+    padding: 80px;
+}

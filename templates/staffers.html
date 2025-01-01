@@ -1,0 +1,174 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Staffers
+{% endblock %}
+
+{% block main %}
+    <form action="/staffers" method="post">
+        <p>Please enter the name and availability of each staffer below.</p>
+        <p>Staffer {{ stafferCurrent }} of {{ staffers }}</p>
+        <input class="form-control mx-auto w-auto" autocomplete="off" type="stafferName" name="stafferName" id="stafferName" placeholder="Staffer name" required>
+        <div class="container">
+            <div class="row" id="days-of-week">
+              <div class="col">
+                Sunday
+              </div>
+              <div class="col">
+                Monday
+              </div>
+              <div class="col">
+                Tuesday
+              </div>
+              <div class="col">
+                Wednesday
+              </div>
+              <div class="col">
+                Thursday
+              </div>
+              <div class="col">
+                Friday
+              </div>
+              <div class="col">
+                Saturday
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sunday" id="sun-a" value="1" required>
+                        <label class="form-check-label" for="sun-a">Available</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="monday" id="mon-a" value="1" required>
+                        <label class="form-check-label" for="mon-a">Available</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tuesday" id="tue-a" value="1" required>
+                        <label class="form-check-label" for="tue-a">Available</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="wednesday" id="wed-a" value="1" required>
+                        <label class="form-check-label" for="wed-a">Available</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="thursday" id="thur-a" value="1" required>
+                        <label class="form-check-label" for="thur-a">Available</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="friday" id="fri-a" value="1" required>
+                        <label class="form-check-label" for="fri-a">Available</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="saturday" id="sat-a" value="1" required>
+                        <label class="form-check-label" for="sat-a">Available</label>
+                      </div>
+                </div>
+            </div>
+            <!-- preference row -->
+            <div class="row">
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sunday" id="sun-p" value="2" required>
+                        <label class="form-check-label" for="sun-p">Prefer not to Staff</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="monday" id="mon-p" value="2" required>
+                        <label class="form-check-label" for="mon-p">Prefer not to Staff</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tuesday" id="tues-p" value="2" required>
+                        <label class="form-check-label" for="tues-p">Prefer not to Staff</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="wednesday" id="wed-p" value="2" required>
+                        <label class="form-check-label" for="wed-p">Prefer not to Staff</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="thursday" id="thur-p" value="2" required>
+                        <label class="form-check-label" for="thur-p">Prefer not to Staff</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="friday" id="fri-p" value="2" required>
+                        <label class="form-check-label" for="fri-p">Prefer not to Staff</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="saturday" id="sat-p" value="2" required>
+                        <label class="form-check-label" for="sat-p">Prefer not to Staff</label>
+                      </div>
+                </div>
+            </div>
+            <!-- unavailable row -->
+            <div class="row">
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sunday" id="sun-u" value="3" required>
+                        <label class="form-check-label" for="sun-u">Unavailable</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="monday" id="mon-u" value="3" required>
+                        <label class="form-check-label" for="mon-u">Unavailable</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tuesday" id="tues-u" value="3" required>
+                        <label class="form-check-label" for="tues-u">Unavailable</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="wednesday" id="wed-u" value="3" required>
+                        <label class="form-check-label" for="wed-u">Unavailable</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="thursday" id="thur-u" value="3" required>
+                        <label class="form-check-label" for="thur-u">Unavailable</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="friday" id="fri-u" value="3" required>
+                        <label class="form-check-label" for="fri-u">Unavailable</label>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="saturday" id="sat-u" value="3" required>
+                        <label class="form-check-label" for="sat-u">Unavailable</label>
+                      </div>
+                </div>
+            </div>
+          </div>
+          <button class="btn" type="submit">Submit</button>
+
+    </form>
+{% endblock %}
